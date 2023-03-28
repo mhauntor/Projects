@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-
+import datetime
     
 class Client3(models.Model):
     guuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -16,6 +16,24 @@ class Client3(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 
+
+class ClientBearerToken(models.Model):
+    client = models.ForeignKey('Client3', on_delete=models.CASCADE)
+    token = models.UUIDField(default=uuid.uuid4, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField()
+
+    def save(self, *args, **kwargs):
+        self.expires_at = datetime.datetime.now() + datetime.timedelta(days=30)
+        super().save(*args, **kwargs)
+
+    def is_expired(self):
+        return datetime.datetime.now() > self.expires_at
+
+class Token(models.Model):
+    key = models.CharField(max_length=40, primary_key=True)
+    client = models.ForeignKey(Client3, related_name='auth_token', on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
 
 
 
