@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', include('app1chatbot.urls')),
     #path('99999/', include('app2reg.urls')),
-    path('', include('apptest.urls')),
-    path('', include('apptoken.urls')),
+    #path('', include('apptest.urls')),
+    #path('', include('apptoken.urls')),
+    path('', include('apiauth.urls')),
 ]

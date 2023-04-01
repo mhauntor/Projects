@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'apptest',
     'apptoken',
+    'apiauth',
     
 ]
 
@@ -122,7 +123,7 @@ AUTH_PASSWORD_VALIDATORS = [
 from datetime import timedelta
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=9999),
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=2),
     "ROTATE_REFRESH_TOKENS": False,
     "BLACKLIST_AFTER_ROTATION": False,
@@ -188,6 +189,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         #'rest_framework.authentication.JWTAuthentication',
+        
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
