@@ -1,0 +1,38 @@
+<!-- calculator.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div class="keypad">
+            <button onclick="clearResult()">C</button>
+            <button onclick="deleteCharacter()">&#9003;</button>
+            <button onclick="percent('%')">%</button>
+            <button onclick="appendCharacter('/')">/</button>
+            <button onclick="appendCharacter('7')">7</button>
+            <button onclick="appendCharacter('8')">8</button>
+            <button onclick="appendCharacter('9')">9</button>
+            <button onclick="appendCharacter('*')">*</button>
+            <button onclick="appendCharacter('4')">4</button>
+            <button onclick="appendCharacter('5')">5</button>
+            <button onclick="appendCharacter('6')">6</button>
+            <button onclick="appendCharacter('-')">-</button>
+            <button onclick="appendCharacter('1')">1</button>
+            <button onclick="appendCharacter('2')">2</button>
+            <button onclick="appendCharacter('3')">3</button>
+            <button onclick="appendCharacter('+')">+</button>
+            <button onclick="appendCharacter('0')">0</button>
+            <button onclick="appendCharacter('.')">.</button>
+           <button onclick="root('√')">√</button>
+            <button onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
