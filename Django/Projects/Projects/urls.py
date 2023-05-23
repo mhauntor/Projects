@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('calculator/', include('calculatorapp.urls')),
     path('textgen/', include('texttohtmlcss.urls')),
+    path('rlform/', include('regandlogin.urls')),
 ]

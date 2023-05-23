@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TexttoHtml</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/txt/styles.css' %}">
+</head>
+
+<body>
+    <table class="container">
+        <th>Text Editor</th>
+        <th>HTML Viewer</th>
+        
+        <tr>
+            <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.media }}
+                        {{ form.doctext }}
+                    </form>
+            </td>
+            <td>
+                
+                    <textarea id="htmldata" readonly></textarea>
+            </td>
+        </tr>
+    </table>
+    <button type="button" class="custom-button" onclick="convertToHtml()">Convert</button>
+    
+    <script src="{% static 'js/txt/scripts.js' %}"></script>
+</body>
+
+</html>

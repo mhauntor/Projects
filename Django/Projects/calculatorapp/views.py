@@ -2,4 +2,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def calculator_view(request):
-    return render(request, 'calculator.html')
+    return render(request, 'calculator/calculator.html')
