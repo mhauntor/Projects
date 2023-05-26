@@ -15,7 +15,7 @@ def registration(request):
     serializer = ClientSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response({'status': 'success'}, status=status.HTTP_201_CREATED)
+        return Response({'status': 'registration successfull'}, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -45,6 +45,17 @@ def login(request):
     
     serializer = ClientSerializer(client)
     data = serializer.data
-    data['access'] = access_token
-    data['refesh'] = refresh_token
+    data['Access_Token'] = access_token
+    data['Refesh_Token'] = refresh_token
     return Response(data)
+
+
+
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+permission_classes = [IsAuthenticated]
+class ClientAPIView(APIView):
+    def get(self, request):
+        clients = Client.objects.all()
+        serializer = ClientSerializer(clients, many=True)
+        return Response(serializer.data)

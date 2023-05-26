@@ -1,44 +1,30 @@
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .container {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
   }
   
-  .container table {
-    width: 80%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
   
   .container th {
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 18px;
-  }
-  
-  .container td {
-    border: 1px solid #ddd;
-    padding: 10px;
-  }
-  
-  .container form {
-    margin-bottom: 10px;
-  }
-  
-  .container textarea {
-    width: 100%;
-    height: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    resize: vertical;
-  }
+    width: 50%;
+  background-color: #cbeaeb;
+  text-align: left;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+
+  #htmldata {
+    width: 50%;
+    height: 360px;
+    width: 98%;
+}
+
   
   .custom-button {
     background-color: #337ab7;
@@ -54,4 +40,3 @@
   .custom-button:hover {
     background-color: #23527c;
   }
-  
