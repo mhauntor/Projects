@@ -1,18 +1,12 @@
 from django.db import models
-    
-class food(models.Model):
-    Food =models.CharField(max_length=128)
-    Calories = models.IntegerField(blank =True, null =True)
-    Total_Fat = models.IntegerField(blank =True, null =True)
-    Sodium = models.IntegerField(blank =True, null =True)
-    Potassium = models.IntegerField(blank =True, null =True)
-    Total_Carbohydrate = models.IntegerField(blank =True, null =True)
-    Dietary_Fiber = models.IntegerField(blank =True, null =True)
-    Protein = models.IntegerField(blank =True, null =True)
-    Vitamin_A = models.IntegerField(blank =True, null =True)
-    Vitamin_C = models.IntegerField(blank =True, null =True)
-    Calcium = models.IntegerField(blank =True, null =True)  
 
+class FoodChart(models.Model):
+    food_name = models.CharField(max_length=255)
+    weight = models.DecimalField(max_digits=6, decimal_places=2)
+    calorie = models.DecimalField(max_digits=6, decimal_places=2)
+    protein = models.DecimalField(max_digits=6, decimal_places=2)
+    fats = models.DecimalField(max_digits=6, decimal_places=2)
+    carbohydrates = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return f"{self.food}"
+        return self.food_name

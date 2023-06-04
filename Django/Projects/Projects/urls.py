@@ -22,4 +22,7 @@ urlpatterns = [
     path('calculator/', include('calculatorapp.urls')),
     path('textgen/', include('texttohtmlcss.urls')),
     path('rlform/', include('regandlogin.urls')),
+    path('r/', include('foodcalorieapp.urls')),
 ]
+
+

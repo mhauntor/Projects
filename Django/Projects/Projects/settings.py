@@ -52,6 +52,9 @@ INSTALLED_APPS = [
 
     'texttohtmlcss',
     'ckeditor',
+    'foodcalorieapp',
+    'django_select2',
+    
 ]
 
 MIDDLEWARE = [
